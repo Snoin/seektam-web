@@ -1,0 +1,20 @@
+language: python
+python:
+- 2.7
+install:
+- pip install -e .[tests]
+- pip install pytest-cov flake8 coveralls
+script:
+# unit test
+- py.test -v --cov seektam --durations=20
+- py.test -v --durations=20
+# lint
+- hooks/pre-commit
+after_success:
+- coveralls
+notifications:
+  irc:
+    channels:
+    - "irc.ozinger.org#snoin-dev"
+    on_success: change
+    on_failure: always
