@@ -10,7 +10,7 @@ commit hook 설정하는 법
    $ ln -s `pwd`/hooks/pre-commit .git/hooks/
 
 
-다운로드 종속성 설치법 (확정 아님)
+다운로드 종속성 설치법
 ----------------------------
 
 .. code-block:: console
