@@ -12,7 +12,7 @@ from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.orm.scoping import scoped_session
 
 from . import koreafood
-from . import model
+from seektam.model import food as food_model
 
 
 # 데이터 크롤링 정보 확인을 위한 로그 표시(디버그용)
@@ -28,18 +28,18 @@ logger.addHandler(sh)
 
 def food_to_model(sess, food):
     ret = []
-    mfood = model.Food()
+    mfood = food_model.Food()
     mfood.name = food.name
     mfood.category_big = food.category_big
     mfood.category_small = food.category_small
 
     for k in food.aliment:
         try:
-            maliment = sess.query(model.Aliment).filter(
-                model.Aliment.name == k).one()
+            maliment = sess.query(food_model.Aliment).filter(
+                food_model.Aliment.name == k).one()
         except NoResultFound:
             arr = food.aliment[k]
-            maliment = model.Aliment()
+            maliment = food_model.Aliment()
             columns = [
                 'weight', 'energy', 'moisture', 'protein', 'fat',
                 'nonfiborous', 'fiber', 'ash', 'calcium', 'potassium',
@@ -65,24 +65,24 @@ def add_model(session, model, filter_func, instance):
             raise NoResultFound
         logger.debug(
             u'{} {} is already in database'.format(
-                model.__name__, instance.name))
+                food_model.__name__, instance.name))
         return False
     except NoResultFound:
         pass
 
-    logger.info(u'{} {} added'.format(model.__name__, instance.name))
+    logger.info(u'{} {} added'.format(food_model.__name__, instance.name))
     session.add(instance)
     session.commit()
     return True
 
 
 def add_food_aliment(session, mfood, maliment):
-    f = session.query(model.Food).filter(
-        model.Food.name == mfood.name).one()
-    a = session.query(model.Aliment).filter(
-        model.Aliment.name == maliment.name).one()
+    f = session.query(food_model.Food).filter(
+        food_model.Food.name == mfood.name).one()
+    a = session.query(food_model.Aliment).filter(
+        food_model.Aliment.name == maliment.name).one()
 
-    rel = model.FoodAlimentRelation()
+    rel = food_model.FoodAlimentRelation()
     rel.food_id = f.id
     rel.aliment_id = a.id
     session.add(rel)
@@ -95,12 +95,13 @@ def add_food_aliment(session, mfood, maliment):
 
 def add_food(session, mfood):
     return add_model(
-        session, model.Food, model.Food.name == mfood.name, mfood)
+        session, food_model.Food, food_model.Food.name == mfood.name, mfood)
 
 
 def add_aliment(session, maliment):
     return add_model(
-        session, model.Aliment, model.Aliment.name == maliment.name, maliment)
+        session, food_model.Aliment, food_model.Aliment.name == maliment.name,
+        maliment)
 
 
 @click.command()
@@ -115,8 +116,8 @@ def loader(url):
     Session = scoped_session(sessionmaker(engine))
     sess = Session()
 
-    model.Base.metadata.bind = engine
-    model.Base.metadata.create_all()
+    food_model.Base.metadata.bind = engine
+    food_model.Base.metadata.create_all()
 
     for food in koreafood.get_food_list():
         mfood = food_to_model(sess, food)
