@@ -2,16 +2,21 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
+
 import argparse
 import logging
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.orm.scoping import scoped_session
+
 from . import koreafood
 from . import model
 
-# logging
+
+# 데이터 크롤링 정보 확인을 위한 로그 표시(디버그용)
+'''
 formatter = logging.Formatter('%(asctime)-15s [%(levelname)s] '
                               '%(threadName)s.%(funcName)s: %(message)s')
 sh = logging.StreamHandler()
@@ -20,6 +25,7 @@ sh.setFormatter(formatter)
 logger = logging.getLogger(__name__)
 logger.addHandler(sh)
 logger.setLevel(logging.DEBUG)
+'''
 
 
 def food_to_model(sess, food):
@@ -57,7 +63,7 @@ def food_to_model(sess, food):
 def add_model(session, model, filter_func, instance):
     try:
         item = session.query(model).filter(filter_func).all()
-        if item == []:
+        if not item:
             raise NoResultFound
         logger.debug(
             u'{} {} is already in database'.format(

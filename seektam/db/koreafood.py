@@ -6,6 +6,7 @@ http://koreanfood.rda.go.kr/
 '''
 
 import urllib
+
 import lxml.html
 from lxml.cssselect import CSSSelector
 import requests
