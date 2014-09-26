@@ -3,9 +3,9 @@
 
 from __future__ import absolute_import
 
-import argparse
 import logging
 
+import click
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
@@ -16,16 +16,14 @@ from . import model
 
 
 # 데이터 크롤링 정보 확인을 위한 로그 표시(디버그용)
-'''
 formatter = logging.Formatter('%(asctime)-15s [%(levelname)s] '
                               '%(threadName)s.%(funcName)s: %(message)s')
 sh = logging.StreamHandler()
-sh.setLevel(logging.DEBUG)
+# sh.setLevel(logging.DEBUG)
 sh.setFormatter(formatter)
 logger = logging.getLogger(__name__)
 logger.addHandler(sh)
-logger.setLevel(logging.DEBUG)
-'''
+# logger.setLevel(logging.DEBUG)
 
 
 def food_to_model(sess, food):
@@ -105,7 +103,14 @@ def add_aliment(session, maliment):
         session, model.Aliment, model.Aliment.name == maliment.name, maliment)
 
 
+@click.command()
+@click.argument('url')
 def loader(url):
+    """
+    농식품종합정보시스템 식품 정보(식단명 및 재료) 정보를 DB에 저장합니다.
+
+    URL    저장할 데이터베이스 URL (ex. mysql://scott@tiger:example.com/dbname)
+    """
     engine = create_engine(url)
     Session = scoped_session(sessionmaker(engine))
     sess = Session()
@@ -120,21 +125,5 @@ def loader(url):
             add_aliment(sess, aliment)
             add_food_aliment(sess, mfood, aliment)
 
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        'url',
-        help='Database URL (ex. mysql://scott@tiger:example.com/dbname)'
-        )
-    args = parser.parse_args()
-
-    if not args.url:
-        logger.error('Missing database url')
-        return
-
-    return loader(args.url)
-
-
 if __name__ == '__main__':
-    main()
+    loader()
