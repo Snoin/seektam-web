@@ -10,7 +10,7 @@ from sqlalchemy import Integer
 from sqlalchemy.ext.declarative import declarative_base
 
 
-from test.model import mock  # SUT
+from tests.model import mock  # SUT
 
 
 Base = declarative_base()
