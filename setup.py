@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from __future__ import print_function
 
 import os.path
@@ -48,7 +50,7 @@ cmdclass = {}
 
 setup(
     name='Seektam-web',
-    description='스노인의 서비스 Seektam의 웹 프로그램',
+    description=u'스노인의 서비스 Seektam의 웹 프로그램',
     long_description=readme(),
     author='LeafDev',
     url='http://seektam.kr/',
