@@ -21,6 +21,10 @@ def readme():
 
 
 install_requires = {
+    # Module 'seektam.db'
+    'cssselect >= 0.9.1',
+    'lxml >= 3.4.0',
+    'requests >= 2.4.1',
     # Entity classes
     'SQLAlchemy >= 0.9.0',
     'alembic >= 0.6.0',
@@ -36,8 +40,6 @@ install_requires = {
 
 tests_require = {
     'pytest >= 2.5.0',
-    'lxml >= 3.3.5',
-    'cssselect >= 0.9.1',
     }
 
 docs_require = {
