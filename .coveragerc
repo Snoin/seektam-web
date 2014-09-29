@@ -1,7 +1,7 @@
 [run]
 omit =
-    cliche/migrations/*.py
-    cliche/migrations/versions/*.py
+    seektam/migrations/*.py
+    seektam/migrations/versions/*.py
 
 [report]
 exclude_lines =
