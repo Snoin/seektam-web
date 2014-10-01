@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
+from click.testing import CliRunner
 
 from seektam.web.app import app
 
@@ -25,3 +26,8 @@ def fx_py_cfg_file(tmpdir):
     with open(path, 'w') as f:
         f.write('PORT = 45009')
     return path
+
+
+@pytest.fixture
+def fx_cli_runner():
+    return CliRunner()

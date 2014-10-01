@@ -6,9 +6,11 @@
 """
 from __future__ import absolute_import
 
+import code
 import functools
 
 from click import group, option, Path
+from flask import _request_ctx_stack
 
 from .config import load_config
 from .web.app import app
@@ -46,6 +48,15 @@ def runserver(debug, reload):
         use_debugger=debug,
         use_reloader=reload
     )
+
+
+@cli.command()
+@global_option
+def shell():
+    """Flask application context 속을 Python shell로 봅니다."""
+    with app.test_request_context():
+        context = dict(app=_request_ctx_stack.top.app)
+        code.interact(local=context)
 
 
 main = cli
