@@ -5,7 +5,7 @@ import os
 
 import pytest
 
-from seektam.db import koreafood  # SUT
+from seektam.crawl import koreafood  # SUT
 
 
 cwd = os.path.dirname(os.path.realpath(__file__))
