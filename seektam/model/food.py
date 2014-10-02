@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import Unicode
 from sqlalchemy import Float
 from sqlalchemy import ForeignKey
+from sqlalchemy import Integer
+from sqlalchemy import Unicode
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
