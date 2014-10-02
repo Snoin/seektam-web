@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head><meta name="WT.ti" content="Home > 식단관리> 음식 정보" /><meta http-equiv="Content-Type" content="text/html; charset=euc-kr" /><title>
+	식단관리(메뉴젠)
+</title>
+    <script type="text/javascript" src="/_n_js/rollover.js"></script>
+    <script type="text/javascript" src="/_n_js/common.js"></script>
+    
+    <link href="/css/mgn.css" rel="stylesheet" type="text/css" media="all" /><link href="/css/common.css" rel="stylesheet" type="text/css" media="all" /><link href="/css/header.css" rel="stylesheet" type="text/css" media="all" /><link href="/css/left.css" rel="stylesheet" type="text/css" media="all" /><link href="/css/footer.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <script type="text/javascript">
+    <!--
+     function meal_Analysis_Click()
+     {  
+        var meal_code = document.getElementById("mealcd").value;
+        var meal_name = document.getElementById("mealnm").value;
+        
+	    window.open("mgn_User_meal_analysis.aspx?mealcode="+meal_code+"&mealname="+meal_name,"Popup1","top=50, left=50, width=860, height=550,scrollbars=yes");
+      }
+     //-->
+     </script>
+</head>
+<body>
+    <form name="form1" method="post" action="mgnmealinfo_mealquery.aspx?s_firstSort=&amp;s_secondSort=&amp;t_mealName=&amp;mealcd=&amp;mealnm=&amp;strflag=true" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTY5MzMwNDA4Nw9kFgICBA9kFhACDQ9kFgJmD2QWBAIBDxAPFgYeDURhdGFUZXh0RmllbGQFBG5hbWUeDkRhdGFWYWx1ZUZpZWxkBQRjb2RlHgtfIURhdGFCb3VuZGdkEBUZEz0964yA67aE66WY7ISg7YOdPT0G67Cl66WYDeu5tSzqs7zsnpDrpZgN66m0LOunjOuRkOulmAbso73rpZgK6rWtLO2DleulmAnssIzqsJzrpZgG7LCc66WYCeq1rOydtOulmA3soIQs67aA7Lmo66WYCeuztuydjOulmAnsobDrprzrpZgJ7YqA6rmA66WYEOuCmOusvCzrrLTsuajrpZgJ6rmA7LmY66WYBu2ajOulmAnsoJPqsIjrpZgM7J6l7JWE7LCM66WYCeyWkeuFkOulmBDsmrDsnKAs7Jyg7KCc7ZKIFOydjOujjCzso7zrpZgs7LCo66WYCeqzvOydvOulmBLri6jsnbzsi53tkojsnpDssrQG65ah66WYBuq4sO2DgBUZAAIwMQIwMgIwMwIwNAIwNQIwNgIwNwIwOAIwOQIxMAIxMQIxMgIxMwIxNAIxNQIxNgIxNwIxOAIxOQIyMAIyMQIyMgIyMwIyNBQrAxlnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnFgFmZAIDDxAPFgYfAAUEbmFtZR8BBQRjb2RlHwJnZBAVARM9Peykkeu2hOulmOyEoO2DnT09FQEAFCsDAWdkZAITDxYEHglpbm5lcmh0bWwFR+y0neq4gOyImCA6IDEyNTTqsbQsIO2OmOydtOyngOyImCA6IDxzcGFuIGNsYXNzPSdjdXJfcGFnZSc+MTwvc3Bhbj4vMTI2HgdWaXNpYmxlZ2QCFQ8WAh8EZ2QCFw8WAh8DBZgaPHRyIGNsYXNzPSdsaXN0X2RhdGFfMDEnPjx0ZCBjbGFzcz0nYV9jJyA+67Cl66WYPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJyA+7IyA67ClPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJz48YSBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT0xJnNfZmlyc3RTb3J0PSZzX3NlY29uZFNvcnQ9JnRfbWVhbE5hbWU9JnNyY2hfbWVhbG5hbWU9Jm1lYWxfY29kZT1EMDExMDEwJm1lYWxfbmFtZT0lYjQlYTklYjclZWUlYzElZjYnIGNsYXNzPSdldW1zaWtubSc+64iE66O97KeAPC9hPjwvdGQ+PC90cj4KPHRyPjx0ZCBjb2xzcGFuPSczJyBjbGFzcz0nbGluZV9kJz48L3RkPjwvdHI+Cjx0ciBjbGFzcz0nbGlzdF9kYXRhXzAxJz48dGQgY2xhc3M9J2FfYycgPuuwpeulmDwvdGQ+IAo8dGQgY2xhc3M9J2FfYycgPuyMgOuwpTwvdGQ+IAo8dGQgY2xhc3M9J2FfYyc+PGEgaHJlZj0nbWdubWVhbGluZm9fbWVhbHF1ZXJ5LmFzcHg/cVBhZ2U9MSZzX2ZpcnN0U29ydD0mc19zZWNvbmRTb3J0PSZ0X21lYWxOYW1lPSZzcmNoX21lYWxuYW1lPSZtZWFsX2NvZGU9RDAxMTAyMCZtZWFsX25hbWU9JWI0JWE5JWI4JWE1JWI5JWU0JyBjbGFzcz0nZXVtc2lrbm0nPuuIhOuluOuwpTwvYT48L3RkPjwvdHI+Cjx0cj48dGQgY29sc3Bhbj0nMycgY2xhc3M9J2xpbmVfZCc+PC90ZD48L3RyPgo8dHIgY2xhc3M9J2xpc3RfZGF0YV8wMSc+PHRkIGNsYXNzPSdhX2MnID7rsKXrpZg8L3RkPiAKPHRkIGNsYXNzPSdhX2MnID7sjIDrsKU8L3RkPiAKPHRkIGNsYXNzPSdhX2MnPjxhIGhyZWY9J21nbm1lYWxpbmZvX21lYWxxdWVyeS5hc3B4P3FQYWdlPTEmc19maXJzdFNvcnQ9JnNfc2Vjb25kU29ydD0mdF9tZWFsTmFtZT0mc3JjaF9tZWFsbmFtZT0mbWVhbF9jb2RlPUQwMTEwMzAmbWVhbF9uYW1lPSViZCVkMiViOSVlNCcgY2xhc3M9J2V1bXNpa25tJz7sjIDrsKU8L2E+PC90ZD48L3RyPgo8dHI+PHRkIGNvbHNwYW49JzMnIGNsYXNzPSdsaW5lX2QnPjwvdGQ+PC90cj4KPHRyIGNsYXNzPSdsaXN0X2RhdGFfMDEnPjx0ZCBjbGFzcz0nYV9jJyA+67Cl66WYPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJyA+7IyA67ClPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJz48YSBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT0xJnNfZmlyc3RTb3J0PSZzX3NlY29uZFNvcnQ9JnRfbWVhbE5hbWU9JnNyY2hfbWVhbG5hbWU9Jm1lYWxfY29kZT1EMDExMDQwJm1lYWxfbmFtZT0lYzIlZmIlYjklZTQnIGNsYXNzPSdldW1zaWtubSc+7LCw67ClPC9hPjwvdGQ+PC90cj4KPHRyPjx0ZCBjb2xzcGFuPSczJyBjbGFzcz0nbGluZV9kJz48L3RkPjwvdHI+Cjx0ciBjbGFzcz0nbGlzdF9kYXRhXzAxJz48dGQgY2xhc3M9J2FfYycgPuuwpeulmDwvdGQ+IAo8dGQgY2xhc3M9J2FfYycgPuyMgOuwpTwvdGQ+IAo8dGQgY2xhc3M9J2FfYyc+PGEgaHJlZj0nbWdubWVhbGluZm9fbWVhbHF1ZXJ5LmFzcHg/cVBhZ2U9MSZzX2ZpcnN0U29ydD0mc19zZWNvbmRTb3J0PSZ0X21lYWxOYW1lPSZzcmNoX21lYWxuYW1lPSZtZWFsX2NvZGU9RDAxMTA1MCZtZWFsX25hbWU9JWM3JWY2JWI5JWNjJWI5JWU0JyBjbGFzcz0nZXVtc2lrbm0nPu2YhOuvuOuwpTwvYT48L3RkPjwvdHI+Cjx0cj48dGQgY29sc3Bhbj0nMycgY2xhc3M9J2xpbmVfZCc+PC90ZD48L3RyPgo8dHIgY2xhc3M9J2xpc3RfZGF0YV8wMSc+PHRkIGNsYXNzPSdhX2MnID7rsKXrpZg8L3RkPiAKPHRkIGNsYXNzPSdhX2MnID7snqHqs6HrsKXrpZg8L3RkPiAKPHRkIGNsYXNzPSdhX2MnPjxhIGhyZWY9J21nbm1lYWxpbmZvX21lYWxxdWVyeS5hc3B4P3FQYWdlPTEmc19maXJzdFNvcnQ9JnNfc2Vjb25kU29ydD0mdF9tZWFsTmFtZT0mc3JjaF9tZWFsbmFtZT0mbWVhbF9jb2RlPUQwMTIwMTAmbWVhbF9uYW1lPSViMSVlMiVjMCVlNSViOSVlNCcgY2xhc3M9J2V1bXNpa25tJz7quLDsnqXrsKU8L2E+PC90ZD48L3RyPgo8dHI+PHRkIGNvbHNwYW49JzMnIGNsYXNzPSdsaW5lX2QnPjwvdGQ+PC90cj4KPHRyIGNsYXNzPSdsaXN0X2RhdGFfMDEnPjx0ZCBjbGFzcz0nYV9jJyA+67Cl66WYPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJyA+7J6h6rOh67Cl66WYPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJz48YSBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT0xJnNfZmlyc3RTb3J0PSZzX3NlY29uZFNvcnQ9JnRfbWVhbE5hbWU9JnNyY2hfbWVhbG5hbWU9Jm1lYWxfY29kZT1EMDEyMDIwJm1lYWxfbmFtZT0lYjYlYTUlYzQlZTElYjklZTQnIGNsYXNzPSdldW1zaWtubSc+65WF7L2p67ClPC9hPjwvdGQ+PC90cj4KPHRyPjx0ZCBjb2xzcGFuPSczJyBjbGFzcz0nbGluZV9kJz48L3RkPjwvdHI+Cjx0ciBjbGFzcz0nbGlzdF9kYXRhXzAxJz48dGQgY2xhc3M9J2FfYycgPuuwpeulmDwvdGQ+IAo8dGQgY2xhc3M9J2FfYycgPuyeoeqzoeuwpeulmDwvdGQ+IAo8dGQgY2xhc3M9J2FfYyc+PGEgaHJlZj0nbWdubWVhbGluZm9fbWVhbHF1ZXJ5LmFzcHg/cVBhZ2U9MSZzX2ZpcnN0U29ydD0mc19zZWNvbmRTb3J0PSZ0X21lYWxOYW1lPSZzcmNoX21lYWxuYW1lPSZtZWFsX2NvZGU9RDAxMjAzMCZtZWFsX25hbWU9JWI5JWUzJWI5JWU0JyBjbGFzcz0nZXVtc2lrbm0nPuuwpOuwpTwvYT48L3RkPjwvdHI+Cjx0cj48dGQgY29sc3Bhbj0nMycgY2xhc3M9J2xpbmVfZCc+PC90ZD48L3RyPgo8dHIgY2xhc3M9J2xpc3RfZGF0YV8wMSc+PHRkIGNsYXNzPSdhX2MnID7rsKXrpZg8L3RkPiAKPHRkIGNsYXNzPSdhX2MnID7snqHqs6HrsKXrpZg8L3RkPiAKPHRkIGNsYXNzPSdhX2MnPjxhIGhyZWY9J21nbm1lYWxpbmZvX21lYWxxdWVyeS5hc3B4P3FQYWdlPTEmc19maXJzdFNvcnQ9JnNfc2Vjb25kU29ydD0mdF9tZWFsTmFtZT0mc3JjaF9tZWFsbmFtZT0mbWVhbF9jb2RlPUQwMTIwNDAmbWVhbF9uYW1lPSViYSViOCViOCVhZSViOSVlNCcgY2xhc3M9J2V1bXNpa25tJz7rs7TrpqzrsKU8L2E+PC90ZD48L3RyPgo8dHI+PHRkIGNvbHNwYW49JzMnIGNsYXNzPSdsaW5lX2QnPjwvdGQ+PC90cj4KPHRyIGNsYXNzPSdsaXN0X2RhdGFfMDEnPjx0ZCBjbGFzcz0nYV9jJyA+67Cl66WYPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJyA+7J6h6rOh67Cl66WYPC90ZD4gCjx0ZCBjbGFzcz0nYV9jJz48YSBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT0xJnNfZmlyc3RTb3J0PSZzX3NlY29uZFNvcnQ9JnRfbWVhbE5hbWU9JnNyY2hfbWVhbG5hbWU9Jm1lYWxfY29kZT1EMDEyMDQxJm1lYWxfbmFtZT0lYmElYjglYjglYWUlYzQlZTElYjklZTQnIGNsYXNzPSdldW1zaWtubSc+67O066as7L2p67ClPC9hPjwvdGQ+PC90cj4KPHRyPjx0ZCBjb2xzcGFuPSczJyBjbGFzcz0nbGluZV9kJz48L3RkPjwvdHI+CmQCGQ8WAh8DBcsOPHRhYmxlIGJvcmRlcj0nMCcgYWxpZ249J2NlbnRlcicgY2VsbHBhZGRpbmc9JzAnIGNlbGxzcGFjaW5nPScwJz4gICAgPHRyPiAgICAgICAgPHRkPjxpbWcgc3JjPScuLi9pbWFnZXMvYnRuL2J0bl9maXJzdC5naWYnIGFsdD0n7LKY7J2M7Jy866GcJyBzdHlsZT0nd2lkdGg6MjZweCA7aGVpZ2h0OiAxN3B4OyBmbG9hdDpsZWZ0OycvPjxpbWcgc3JjPScuLi9pbWFnZXMvYnRuL2J0bl9wcmUuZ2lmJyBhbHQ9JzEw7Y6Y7J207KeAIOyVnuycvOuhnCcgc3R5bGU9J3dpZHRoOjI2cHggO2hlaWdodDogMTdweDsgZmxvYXQ6bGVmdDsnLz48YSBvbmZvY3VzPSd0aGlzLmJsdXIoKTsnIHN0eWxlPSdmbG9hdDpsZWZ0OyB3aWR0aDoxNXB4OyBwYWRkaW5nOjRweCAxMHB4IDBweCA0cHg7ICc+PGI+MTwvYj48L2E+PGEgb25mb2N1cz0ndGhpcy5ibHVyKCk7JyBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT0yJmFtcDtzX2ZpcnN0U29ydD0mYW1wO3Nfc2Vjb25kU29ydD0mYW1wO3RfbWVhbE5hbWU9JmFtcDttZWFsY2Q9RDAxMjA0MSZhbXA7bWVhbG5tPSZhbXA7c3RyZmxhZz10cnVlJyBzdHlsZT0nZmxvYXQ6bGVmdDsgd2lkdGg6MTVweDsgcGFkZGluZzo0cHggMTBweCAwcHggNHB4OyAnPjI8L2E+PGEgb25mb2N1cz0ndGhpcy5ibHVyKCk7JyBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT0zJmFtcDtzX2ZpcnN0U29ydD0mYW1wO3Nfc2Vjb25kU29ydD0mYW1wO3RfbWVhbE5hbWU9JmFtcDttZWFsY2Q9RDAxMjA0MSZhbXA7bWVhbG5tPSZhbXA7c3RyZmxhZz10cnVlJyBzdHlsZT0nZmxvYXQ6bGVmdDsgd2lkdGg6MTVweDsgcGFkZGluZzo0cHggMTBweCAwcHggNHB4OyAnPjM8L2E+PGEgb25mb2N1cz0ndGhpcy5ibHVyKCk7JyBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT00JmFtcDtzX2ZpcnN0U29ydD0mYW1wO3Nfc2Vjb25kU29ydD0mYW1wO3RfbWVhbE5hbWU9JmFtcDttZWFsY2Q9RDAxMjA0MSZhbXA7bWVhbG5tPSZhbXA7c3RyZmxhZz10cnVlJyBzdHlsZT0nZmxvYXQ6bGVmdDsgd2lkdGg6MTVweDsgcGFkZGluZzo0cHggMTBweCAwcHggNHB4OyAnPjQ8L2E+PGEgb25mb2N1cz0ndGhpcy5ibHVyKCk7JyBocmVmPSdtZ25tZWFsaW5mb19tZWFscXVlcnkuYXNweD9xUGFnZT01JmFtcDtzX2ZpcnN0U29ydD0mYW1wO3Nfc2Vjb25kU29ydD0mYW1wO3RfbWVhbE5hbWU9JmFtcDttZWFsY2Q9RDAxMjA0MSZhbXA7bWVhbG5tPSZhbXA7c3RyZmxhZz10cnVlJyBzdHlsZT0nZmxvYXQ6bGVmdDsgd2lkdGg6MTVweDsgcGFkZGluZzo0cHggMTBweCAwcHggNHB4OyAnPjU8L2E+PGEgaHJlZj0nbWdubWVhbGluZm9fbWVhbHF1ZXJ5LmFzcHg/cVBhZ2U9NiZhbXA7c19maXJzdFNvcnQ9JmFtcDtzX3NlY29uZFNvcnQ9JmFtcDt0X21lYWxOYW1lPSZhbXA7bWVhbGNkPUQwMTIwNDEmYW1wO21lYWxubT0mYW1wO3N0cmZsYWc9dHJ1ZSc+PGltZyBzcmM9Jy4uL2ltYWdlcy9idG4vYnRuX25leHQuZ2lmJyBhbHQ9JzEw7Y6Y7J207KeAIOuSpOuhnCcgc3R5bGU9J3dpZHRoOjI2cHggO2hlaWdodDogMTdweDsgZmxvYXQ6bGVmdDsnLz48L2E+PGEgaHJlZj0nbWdubWVhbGluZm9fbWVhbHF1ZXJ5LmFzcHg/cVBhZ2U9MTI2JmFtcDtzX2ZpcnN0U29ydD0mYW1wO3Nfc2Vjb25kU29ydD0mYW1wO3RfbWVhbE5hbWU9JmFtcDttZWFsY2Q9RDAxMjA0MSZhbXA7bWVhbG5tPSZhbXA7c3RyZmxhZz10cnVlJz48aW1nIHNyYz0nLi4vaW1hZ2VzL2J0bi9idG5fZW5kLmdpZicgYWx0PSfrp4jsp4Drp4nsnLzroZwnIHN0eWxlPSd3aWR0aDoyNnB4IDtoZWlnaHQ6IDE3cHg7IGZsb2F0OmxlZnQ7Jy8+PC9hPiAgICAgICAgPC90ZD4gICAgPC90cj48L3RhYmxlPmQCGw8WAh8EaGQCHQ8WAh8EaGQCIQ8WAh8EaGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFC21lYWxfU2VhcmNo" />
+
+
+<script src="/ScriptResource.axd?d=nD5zJT1tOvx3Hk8INlSwpq427o6wx2BcoHfHO-tUOL9nyl_lX11V4ugRT1KjQ-2UEwyy4EquLzJnCpL08r2LZdVHm3BTl-xj-eywv9qeUfWMoCYm_FpoiFb9rSPUjr88QYVFSxpYMUeRDapXX4nopAKYQgPurtfGj1YnMtMCJviRpSYl0&amp;t=633971873230431250" type="text/javascript"></script>
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWIAKGjeTiCgKB0frsAgKM0dbsAgKC1ajPDAKdqZnvBwKNxv+CCwKNxvuCCwKNxseCCwKNxsOCCwKNxs+CCwKNxsuCCwKNxteCCwKNxpOBCwKNxp+BCwKSxvOCCwKSxv+CCwKSxvuCCwKSxseCCwKSxsOCCwKSxs+CCwKSxsuCCwKSxteCCwKSxpOBCwKSxp+BCwKTxvOCCwKTxv+CCwKTxvuCCwKTxseCCwKTxsOCCwLzzeHYCAKB+t6jCwLk+J6eCg==" />
+        
+     <div id="wrap">
+      <div id="header">
+	    <!-- 탑 부분 -->
+           
+
+    <script type="text/javascript">
+    <!--
+    function BeforeTotalSearch(frm)
+    {  
+        if (frm.value=="" || frm.value=="검색어를 입력하세요 예) 콩나물,비빔밥")
+        {
+            alert("검색어를 입력해 주세요!!");
+            frm.focus();
+            return false;
+        }
+        else
+        {   
+            document.location="/inctfd/total_srch.aspx?qSearch1="+escape(frm.value)
+            return false;
+        }
+    }
+
+    function swap4_table(tab) {
+	    var tab_img13 = document.getElementById('Image13_');
+	    var tab_img14 = document.getElementById('Image14_');
+	    var tab_img15 = document.getElementById('Image15_');
+	    var tab_img16 = document.getElementById('Image16_');
+
+	    tab_img13.src = '../images/common/menu01'+(tab==13 ? '_on4':'')+'.png';
+	    tab_img14.src = '../images/common/menu02'+(tab==14 ? '_on4':'')+'.png';
+	    tab_img15.src = '../images/common/menu03'+(tab==15 ? '_on4':'')+'.png';
+	    tab_img16.src = '../images/common/menu04'+(tab==16 ? '_on4':'')+'.png';
+    }
+
+    function setPng24(obj) {
+		obj.width=obj.height=1;
+		obj.className=obj.className.replace(/\bpng24\b/i,'');
+		obj.style.filter =
+		"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');"
+		obj.src='';
+		return '';
+		} /* png 익스6에버전 오류 잡기 */
+		
+    //-->
+    </script>
+    <div class="head">
+        <div class="logo"><a href="http://www.naas.go.kr/" target="_blank"><img src="../images/common/logo1.gif" alt="국립농업과학원"/></a><a href="../TFood_Default.aspx"><img src="../images/common/logo2.gif" class="logo2" alt="농식품종합정보시스템" /></a></div>
+        <div class="search">
+        <label for="Searchtext">
+        <input type="text" id="Searchtext" class="formbox" name="txtTotalSearch" size="38" maxlength="50" onkeypress="if (event.keyCode == 13) {return false;}" onkeydown="if (event.keyCode == 13) {BeforeTotalSearch(document.all.txtTotalSearch);}"  value="검색어를 입력하세요 예) 콩나물,비빔밥" onfocus="Change(this,0)" onblur="Change(this,1)" />
+        </label>
+        <img src="/images/common/btn_search.gif" onclick="BeforeTotalSearch(document.all.txtTotalSearch);" style="margin-top:-1px;margin-left:2px;cursor:pointer;" alt="검색"/>
+            <ul>
+				<li><a href="/board/SiteMap.aspx">사이트맵</a> | </li>
+				<li><a href="http://www.naas.go.kr/04_intro/Intro_Greeting.do?menu_code=4&mmode=9" target="_blank">찾아오시는길</a></li>
+			</ul>
+        </div>
+    </div>
+    
+    <div class="subimg1">
+        <ul>
+            <li><a href="../board/TF_board4_01.aspx"><img src="../images/common/menu01.png" class="png24" alt="향토음식" onmouseover="swap4_table('13')" id="Image13_" /></a></li>
+		    <li><a href="../tf_srch/TF_srch_01.aspx"><img src="../images/common/menu02.png" class="png24" alt="한국음식문화" onmouseover="swap4_table('14')" id="Image14_" /></a></li>
+		    <li><a href="../fct/Fct_Intro.aspx"><img src="../images/common/menu03.png" class="png24" alt="식품성분표" onmouseover="swap4_table('15')" id="Image15_" /></a></li>
+		    <li><a href="../mgn/mgnmenudia_kcalnnutri.aspx"><img src="../images/common/menu04_on4.png" class="png24" alt="메뉴젠" onmouseover="swap4_table('16')" id="Image16_" /></a></li>
+        </ul>
+    </div>
+	    <!-- 탑 부분 -->
+      </div> 
+         <input type="hidden" name="mealcd" id="mealcd" value="D012041" />
+         <input type="hidden" name="mealnm" id="mealnm" value="보리콩밥" />
+         <input type="hidden" name="srch_secondcode_page" id="srch_secondcode_page" />
+       <div id="sub_body">
+	    <div id="sub_left">
+	    <!-- 왼쪽메뉴 부분 -->
+           
+    <script type="text/javascript">
+    <!--
+    function kimchi() {
+	    var url = "http://www.naas.go.kr/kimchi/";
+	    window.open(url, '', "resizable=no, scrollbars=yes, width=1280,height=846");
+    }
+    //-->
+    </script>
+    
+    <div id="sub_left_mgn_title"><img src="../images/mgn/lm_title_mgn1.jpg" title="메뉴젠" alt="메뉴젠"/></div>
+     <div id="sub_left_menu_2011">
+        <div id="sub_lm_2011">
+            <ul>
+                <li><a href="../mgn/mgnmenusrch_menuquery.aspx"><img src="../images/mgn/lm_e2_on.gif" name="lm6" title="메뉴젠" alt="메뉴젠" /></a>
+                
+                  <div class="menu_s_act" id="sub_lms_06" style="display:block" >
+			        <ul id="mgn_left1_mgn_ul_ip">
+			         <li id="mgn_li3"><a href="../mgn/mgnmenumk_food_select.aspx" title="식단 작성" class="menus top1">식단 작성</a></li>
+			         <li id="mgn_li5"><a href="../mgn/mgnmenudia_diag_user.aspx" title="식단 진단" class="menus top1">식단 진단</a></li>
+			          <li id="mgn_li7"><a href="../mgn/mgnmenudia_kcalnnutri.aspx" title="간편 음식정보 검색" class="menus top1">간편 음식정보 검색</a></li> 
+			          <li id="mgn_li4"><a href="../mgn/mgnmealinfo_mealquery.aspx" title="음식 정보" class="menus top1">음식 정보</a></li> 
+			          <li id="mgn_li1"><a href="../mgn/mgnmenusrch_menuquery.aspx" title="식단 검색" class="menus top1">식단 검색</a></li>
+			          <li id="mgn_li2"><a href="../mgn/mgnmenudia_nutri_std.aspx" title="식생활정보" class="menus top1">식생활정보</a>
+    			        
+			        <div id="mgnLeft_top">
+			        <ul>
+			          <li id="mgn_li6"><a href="../mgn/mgnmenudia_nutri_std.aspx" title="영양섭취 기준량" class="menus">&nbsp;&nbsp;&nbsp;&nbsp;- 영양섭취 기준량</a></li>
+			          <li id="mgn_li9"><a href="../mgn/mgnfs_consumer_info.aspx" title="생애주기별 영양정보" class="menus">&nbsp;&nbsp;&nbsp;&nbsp;- 생애주기별 영양정보</a></li>
+			          <li id="mgn_li8"><a href="../mgn/mgnfs_word_def.aspx" title="식품안전용어사전" class="menus">&nbsp;&nbsp;&nbsp;&nbsp;- 식품안전용어사전</a></li>
+    			      
+		            </ul>
+		           </div>
+    			      
+			          </li>
+                
+                    </ul> 
+			      </div >
+			      
+                </li>
+            </ul>
+            <ul>
+		        <li><img src="/images/kimch_ban.jpg" alt="특선별미 김치 30선" onclick="javascript:kimchi();" style="cursor:pointer;" /></li>
+		    </ul>
+        </div>
+     </div>
+
+	    <!-- 왼쪽메뉴 부분 -->
+	    </div>
+
+
+	    <div id="sub_right">
+    	 
+	       <div id="sub_rtop4"></div>
+	       <div id="sub_rbtm">
+	         <div id="path">
+		       <ul>
+	                <li><img src="../images/icon/icon_home.gif" alt="홈" /></li>
+	                <li><a href="/index.aspx" class="path" title="홈">홈</a></li>
+	                <li> &gt;</li>
+	                <li><a href="/mgn/mgnmenusrch_menuquery.aspx" class="path" title="식단관리(메뉴젠)">식단관리(메뉴젠)</a></li>
+	                <li> &gt;</li>
+		            <li><a href="/mgn/mgnmealinfo_mealquery.aspx" class="path" title="음식정보">음식정보</a></li>
+		      </ul>
+		     </div>
+	         <!-- 내용 시작 -->
+             <div id="sub_contents">
+
+		       <div id="titlebar" class="con"><p class="tit"><span>음식</span> 정보</p></div>
+
+		       <div id="contents">
+		         <!-- 음식작성페이지 시작-->
+    		     
+    		     <div id='mls_top'><!-- 위에 검색부분 Start -->
+    		       <div id='topbar' class='board_top w_full'></div>
+    		       
+                  <div id="up1">
+	 
+	               <ul id='mls_top_01'>
+	                 <li class='mls_top_text'>음식분류</li>
+	                 <li>
+	                   <select name="s_firstSort" id="s_firstSort">
+		<option selected="selected" value="">==대분류선택==</option>
+		<option value="01">밥류</option>
+		<option value="02">빵,과자류</option>
+		<option value="03">면,만두류</option>
+		<option value="04">죽류</option>
+		<option value="05">국,탕류</option>
+		<option value="06">찌개류</option>
+		<option value="07">찜류</option>
+		<option value="08">구이류</option>
+		<option value="09">전,부침류</option>
+		<option value="10">볶음류</option>
+		<option value="11">조림류</option>
+		<option value="12">튀김류</option>
+		<option value="13">나물,무침류</option>
+		<option value="14">김치류</option>
+		<option value="15">회류</option>
+		<option value="16">젓갈류</option>
+		<option value="17">장아찌류</option>
+		<option value="18">양념류</option>
+		<option value="19">우유,유제품</option>
+		<option value="20">음료,주류,차류</option>
+		<option value="21">과일류</option>
+		<option value="22">단일식품자체</option>
+		<option value="23">떡류</option>
+		<option value="24">기타</option>
+
+	</select>
+                     </li>
+	                 <li>
+	                   <select name="s_secondSort" id="s_secondSort">
+		<option selected="selected" value="">==중분류선택==</option>
+
+	</select>
+                      </li>
+	               </ul>
+	               
+</div>
+	               <div id='mls_line_d'></div>
+	               <ul id='mls_top_02'>
+	                 <li class='mls_top_text'>음&nbsp;식&nbsp;명</li>
+	                 <li><label for="t_mealName"><input name="t_mealName" type="text" id="t_mealName" style="width:316px;" /></label></li>
+	                 <li class='mls_top_btn'><input src="/images/btn/btn_search.gif" name="meal_Search" type="image" id="meal_Search" alt="검색" style="&quot;vertical-align:middle" /></li>
+	               </ul>
+    		       <div id='btmbar' class='board_bottom w_full'></div>
+    		       <br />
+                  </div> <!-- 위에 검색부분 End -->
+                  
+    		      <div id="mls_body01"><!-- 아래검색내용 S -->
+    		        <div id="mls_body01_l">
+    		            <div id="lblPageInfo" class="list_count">총글수 : 1254건, 페이지수 : <span class='cur_page'>1</span>/126</div>
+    		            <div id='mls_body01_l_body'>
+    		            <table id="tbl_02" border="0" cellpadding="0" cellspacing="0" width="100%" summary="음식분류">
+        		        
+    		             <thead id="meal_sort_title">
+    		                  <tr>
+    		                    <th>대분류</th>
+    		                    <th>중분류</th>
+    		                    <th>소분류</th>
+    		                  </tr>
+    		            </thead>
+    		            
+    		            <tbody id="sort_Table"><tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >쌀밥</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D011010&meal_name=%b4%a9%b7%ee%c1%f6' class='eumsiknm'>누룽지</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >쌀밥</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D011020&meal_name=%b4%a9%b8%a5%b9%e4' class='eumsiknm'>누른밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >쌀밥</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D011030&meal_name=%bd%d2%b9%e4' class='eumsiknm'>쌀밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >쌀밥</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D011040&meal_name=%c2%fb%b9%e4' class='eumsiknm'>찰밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >쌀밥</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D011050&meal_name=%c7%f6%b9%cc%b9%e4' class='eumsiknm'>현미밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >잡곡밥류</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D012010&meal_name=%b1%e2%c0%e5%b9%e4' class='eumsiknm'>기장밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >잡곡밥류</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D012020&meal_name=%b6%a5%c4%e1%b9%e4' class='eumsiknm'>땅콩밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >잡곡밥류</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D012030&meal_name=%b9%e3%b9%e4' class='eumsiknm'>밤밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >잡곡밥류</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D012040&meal_name=%ba%b8%b8%ae%b9%e4' class='eumsiknm'>보리밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+<tr class='list_data_01'><td class='a_c' >밥류</td> 
+<td class='a_c' >잡곡밥류</td> 
+<td class='a_c'><a href='mgnmealinfo_mealquery.aspx?qPage=1&s_firstSort=&s_secondSort=&t_mealName=&srch_mealname=&meal_code=D012041&meal_name=%ba%b8%b8%ae%c4%e1%b9%e4' class='eumsiknm'>보리콩밥</a></td></tr>
+<tr><td colspan='3' class='line_d'></td></tr>
+</tbody>
+    		            
+    		            </table>
+    		            <table width="735px;" border="0">
+                            <tr><td>&nbsp;</td></tr>
+                            <tr>
+                                <td id="PagerString" colspan="7" align="center"><table border='0' align='center' cellpadding='0' cellspacing='0'>    <tr>        <td><img src='../images/btn/btn_first.gif' alt='처음으로' style='width:26px ;height: 17px; float:left;'/><img src='../images/btn/btn_pre.gif' alt='10페이지 앞으로' style='width:26px ;height: 17px; float:left;'/><a onfocus='this.blur();' style='float:left; width:15px; padding:4px 10px 0px 4px; '><b>1</b></a><a onfocus='this.blur();' href='mgnmealinfo_mealquery.aspx?qPage=2&amp;s_firstSort=&amp;s_secondSort=&amp;t_mealName=&amp;mealcd=D012041&amp;mealnm=&amp;strflag=true' style='float:left; width:15px; padding:4px 10px 0px 4px; '>2</a><a onfocus='this.blur();' href='mgnmealinfo_mealquery.aspx?qPage=3&amp;s_firstSort=&amp;s_secondSort=&amp;t_mealName=&amp;mealcd=D012041&amp;mealnm=&amp;strflag=true' style='float:left; width:15px; padding:4px 10px 0px 4px; '>3</a><a onfocus='this.blur();' href='mgnmealinfo_mealquery.aspx?qPage=4&amp;s_firstSort=&amp;s_secondSort=&amp;t_mealName=&amp;mealcd=D012041&amp;mealnm=&amp;strflag=true' style='float:left; width:15px; padding:4px 10px 0px 4px; '>4</a><a onfocus='this.blur();' href='mgnmealinfo_mealquery.aspx?qPage=5&amp;s_firstSort=&amp;s_secondSort=&amp;t_mealName=&amp;mealcd=D012041&amp;mealnm=&amp;strflag=true' style='float:left; width:15px; padding:4px 10px 0px 4px; '>5</a><a href='mgnmealinfo_mealquery.aspx?qPage=6&amp;s_firstSort=&amp;s_secondSort=&amp;t_mealName=&amp;mealcd=D012041&amp;mealnm=&amp;strflag=true'><img src='../images/btn/btn_next.gif' alt='10페이지 뒤로' style='width:26px ;height: 17px; float:left;'/></a><a href='mgnmealinfo_mealquery.aspx?qPage=126&amp;s_firstSort=&amp;s_secondSort=&amp;t_mealName=&amp;mealcd=D012041&amp;mealnm=&amp;strflag=true'><img src='../images/btn/btn_end.gif' alt='마지막으로' style='width:26px ;height: 17px; float:left;'/></a>        </td>    </tr></table></td>
+
+                            </tr>
+                        </table> 
+    		            </div>
+    		        
+    		        
+    		        </div><!--mls_body01_l-->
+    		        
+    		        <div id="mls_body01_r">
+    		        
+    		        <div id='mls_body01_r_body'>
+    		         <table id="tbl_22" border="0" cellpadding="0" cellspacing="0"  width='100%' summary="음식구성">
+    		         <colgroup>
+    		          <col width="50px" />
+    		          <col width="100px" />
+    		          <col width="50" />
+    		          <col width="100" />
+    		          <col width="80" />
+    		          <col width="35" />
+    		         </colgroup>
+    		           
+    		            <tbody id="const_body">
+    		                <tr class="list_data">
+                            <td colspan='7' class="a_c">검색된 데이터가 없습니다.</td>
+                            </tr>
+    		            </tbody> 
+    		         </table>
+    		        </div>
+    		           
+    		        </div>
+    		      </div><!-- 아래검색내용 E -->
+    		      </div>
+    		        
+		         <!-- 음식작성페이지 끝-->
+		       </div>
+    		 
+    		 
+		     </div>           
+	         <!-- 내용 끝 -->
+	       </div>
+
+	    </div>
+      </div>
+           <div id="person">
+       
+
+<ul>
+<li class="txt1">담당자&nbsp;</li>
+<li>:&nbsp;가공이용과&nbsp;최정숙</li>
+<li class="txt2">&nbsp;063-238-3503&nbsp;</li>
+<li class="txt1">&nbsp;갱신주기&nbsp;</li>
+<li>:&nbsp;수시</li>
+</ul>
+     </div>
+
+
+      <div id="footer_2011">
+	     
+
+<div id="footer_wrap">
+<div id="footer_left">
+ 
+ </div>
+ <div id="footer_right">
+   <div id="footer_right_con1">
+     <ul>
+        <li class="txt1">565-851 전북 완주군 이서면 농생명로 166, 국립농업과학원 농식품자원부 TEL:063-238-3503 FAX:063-238-3841</li>
+	<li class="txt1">관리부서 : 농촌진흥청 국립농업과학원 농식품자원부</li>
+	<li class="txt3">본 웹사이트는 이메일 주소가 무단 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.</li>
+	<li class="txt2">Copyright ⓒ 2009 National Academy of Agricultural Science. All Rights Reserved</li>
+     </ul>
+   </div>
+ </div>
+ </div>
+ <script src="http://203.241.70.159:9095/koreanfood.rda.go.kr.js" type="text/javascript"></script>
+      </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+            <script type="text/javascript">focusmenu("mgn_li4");</script>
+    <noscript> 메뉴 포커스</noscript>
+</body>
+</html>
