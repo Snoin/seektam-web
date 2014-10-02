@@ -14,8 +14,12 @@ from .orm import Base
 association_food_aliment_table = Table(
     'koreafood_food_aliment_rels',
     Base.metadata,
-    Column('food_id', Integer, ForeignKey('koreafood_foods.id')),
-    Column('aliment_id', Integer, ForeignKey('koreafood_aliments.id'))
+    Column(
+        'food_id', Integer, ForeignKey('koreafood_foods.id'),
+        primary_key=True),
+    Column(
+        'aliment_id', Integer, ForeignKey('koreafood_aliments.id'),
+        primary_key=True)
 )
 
 
