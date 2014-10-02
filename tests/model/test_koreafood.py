@@ -41,8 +41,7 @@ def test_koreafood_aliment_relationship_1_1(mockdb):
 
     # query
     newsess = mockdb._Session()
-    newf = newsess.query(koreafood.Food).filter(
-        koreafood.Food.id == f.id).one()
+    newf = newsess.query(koreafood.Food).filter_by(id=f.id).one()
 
     # validate
     assert len(newf.aliments) == 1
@@ -63,8 +62,7 @@ def test_koreafood_aliment_relationship_1_n(mockdb):
         id=2001, name='food_1', aliments=aliments)
 
     newsess = mockdb._Session()
-    newf = newsess.query(koreafood.Food).filter(
-        koreafood.Food.id == f.id).one()
+    newf = newsess.query(koreafood.Food).filter_by(id=f.id).one()
 
     assert len(newf.aliments) == N
     for n in range(N):
