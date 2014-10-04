@@ -67,3 +67,27 @@ def test_koreafood_aliment_relationship_1_n(mockdb):
     assert len(newf.aliments) == N
     for n in range(N):
         assert newf.aliments[n].id == 1000+n
+
+
+def test_koerafood_aliment_relationship_delete(mockdb):
+    N = 3
+    aliments = []
+    for n in range(1000, 1000+N):
+        a = _mockdb_add_model(
+            mockdb, koreafood.Aliment,
+            id=n, name='aliment_%s' % n)
+        aliments.append(a)
+
+    f = _mockdb_add_model(
+        mockdb, koreafood.Food,
+        id=2001, name='food_1', aliments=aliments)
+
+    newsess = mockdb._Session()
+    a = newsess.query(koreafood.Aliment).filter_by(id=1000+N-1).one()
+    newsess.delete(a)
+    newsess.commit()
+
+    newf = newsess.query(koreafood.Food).filter_by(id=f.id).one()
+    assert len(newf.aliments) == N-1
+    for idx, a in enumerate(aliments[:-1]):
+        assert newf.aliments[idx].id == a.id
