@@ -9,10 +9,24 @@ from sqlalchemy.orm.scoping import scoped_session
 class MockDatabase(object):
     """ In-memory DB for safer, faster testing """
 
-    def __init__(self, engine):
-        self.target_engine = engine
-        self.TBase = declarative_base()
-        self.TBase.metadata.reflect(bind=self.target_engine)
+    def __init__(self, engine=None, Base=None):
+        '''
+        Create MockDatabase instance.
+
+        If `engine` is given, MockDatabase reflects engine's declarative base.
+        If `Base` is given, MockDatabase reflects Base.
+        '''
+
+        if engine is None and Base is None:
+            raise ValueError('No mocking target spcified.')
+
+        if engine:
+            self.target_engine = engine
+            self.TBase = declarative_base()
+            self.TBase.metadata.reflect(bind=self.target_engine)
+        elif Base:
+            self.TBase = Base
+
         self.init()
 
     def init(self):
@@ -24,6 +38,9 @@ class MockDatabase(object):
         self.MBase.metadata.bind = self.mock_engine
         self.MBase.metadata.create_all()
         self._Session = scoped_session(sessionmaker(bind=self.mock_engine))
+
+    def session(self):
+        return self._Session()
 
     def tables(self):
         return self.MBase.metadata.tables
