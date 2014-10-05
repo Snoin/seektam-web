@@ -22,6 +22,21 @@ class MockDatabase(object):
         strategy, :class:`MockDatabase` does not retrieve any data in
         mapped engine.
 
+        For example, if you want to reflect from engine,
+
+        .. highlight:: python
+            from sqlalchemy import create_engine
+            engine = sqlalchemy.create_engine('mysql://user:****@host/db')
+
+            mockdb = MockDatabase(engine=engine)
+
+        or you can use
+
+        .. highlight:: python
+            from mymodel import Base
+
+            mockdb = MockDatabase(Base=Base)
+
         Args:
             engine (sqlalchemy.engine.Engine):
                 Reflects engine's declarative base.
