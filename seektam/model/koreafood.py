@@ -1,22 +1,26 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import Unicode
 from sqlalchemy import Float
 from sqlalchemy import ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Integer
+from sqlalchemy import Table
+from sqlalchemy import Unicode
+from sqlalchemy.orm import relationship
 
-Base = declarative_base()
+from .orm import Base
 
 
-class FoodAlimentRelation(Base):
-    __tablename__ = 'koreafood_food_aliment_rels'
-
-    food_id = Column(
-        Integer, ForeignKey('koreafood_foods.id'), primary_key=True)
-    aliment_id = Column(
-        Integer, ForeignKey('koreafood_aliments.id'), primary_key=True)
+association_food_aliment_table = Table(
+    'koreafood_food_aliment_rels',
+    Base.metadata,
+    Column(
+        'food_id', Integer, ForeignKey('koreafood_foods.id'),
+        primary_key=True),
+    Column(
+        'aliment_id', Integer, ForeignKey('koreafood_aliments.id'),
+        primary_key=True)
+)
 
 
 class Food(Base):
@@ -26,6 +30,9 @@ class Food(Base):
     name = Column(Unicode(200), unique=True)
     category_big = Column(Unicode(20))
     category_small = Column(Unicode(20))
+    aliments = relationship(
+        'Aliment',
+        secondary=association_food_aliment_table)
 
 
 class Aliment(Base):
