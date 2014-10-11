@@ -12,7 +12,7 @@ from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.orm.scoping import scoped_session
 
 from . import koreafood
-from seektam.model import food as food_model
+from ..model import koreafood as food_model
 
 
 # 데이터 크롤링 정보 확인을 위한 로그 표시(디버그용)
@@ -40,6 +40,8 @@ def food_to_model(sess, food):
         except NoResultFound:
             arr = food.aliment[k]
             maliment = food_model.Aliment()
+
+            # FIXME: take food.aliment as dict(dict()), not dict(list())
             columns = [
                 'weight', 'energy', 'moisture', 'protein', 'fat',
                 'nonfiborous', 'fiber', 'ash', 'calcium', 'potassium',
@@ -48,11 +50,12 @@ def food_to_model(sess, food):
                 ]
 
             maliment.name = k
-            weight = float(arr[0].replace(',', '')) or 1.0
+            arr = map(lambda x: x.replace(',', ''), arr)
+            weight = float(arr[0]) if arr[0] else 1.0
             for c in columns[1:]:
                 setattr(maliment, c, float(arr[columns.index(c)]) / weight)
-        finally:
-            ret.append(maliment)
+
+        ret.append(maliment)
 
     mfood.aliments = ret
     return mfood
