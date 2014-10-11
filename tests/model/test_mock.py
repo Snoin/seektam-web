@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import absolute_import
-
-
+import pytest
 import sqlalchemy
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy.ext.declarative import declarative_base
-
 
 from tests.model import mock  # SUT
 
@@ -39,10 +36,32 @@ def test_init_reflect_tables():
     assert list(mockdb.tables()) == [SampleTable.__tablename__]
 
 
+def test_init_reflect_table_using_base():
+    mockdb = mock.MockDatabase(Base=Base)
+    assert list(mockdb.tables()) == [SampleTable.__tablename__]
+
+
+def test_init_raises_error_when_no_argument_given():
+    with pytest.raises(ValueError):
+        mock.MockDatabase()
+
+
 def test_query_empty_table():
     res = mockdb.query('sample_table')
 
     assert len(res) == 0
+
+
+def test_query_using_session():
+    a = SampleTable(id=1, value=100)
+
+    sess = mockdb.session()
+    sess.add(a)
+    sess.commit()
+
+    sess = mockdb.session()
+    newa = sess.query(SampleTable).one()
+    assert newa == a
 
 
 def test_insert_single():
