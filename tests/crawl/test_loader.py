@@ -140,6 +140,7 @@ def test_format_comma_appended():
     assert '{:,}'.format(12) == '12'
     assert '{:,}'.format(12345) == '12,345'
     assert '{:,}'.format(111.22) == '111.22'
+    assert '{:,}'.format(1234.56789) == '1,234.56789'
 
 
 def test_foodtomodel_parse_aliment():
