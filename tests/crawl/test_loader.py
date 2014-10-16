@@ -36,7 +36,6 @@ def dummy_error_func(*args, **kwarg):
 
 def dummy_fuzzy_aliment(name='ALIMENT'):
     a = food.Aliment()
-    a.id = random.randint(1, 10000)
     a.name = name
     a._aliment_dic = {}
 
