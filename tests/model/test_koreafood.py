@@ -91,3 +91,17 @@ def test_koerafood_aliment_relationship_delete(mockdb):
     assert len(newf.aliments) == N-1
     for idx, a in enumerate(aliments[:-1]):
         assert newf.aliments[idx].id == a.id
+
+
+def test_koreafood_aliment_relationship_add_multiple(mockdb):
+    a = koreafood.Aliment(name='aliment_1', id=1001)
+    f = koreafood.Food(name='food_1', id=2001, aliments=[a])
+
+    newsess = mockdb._Session()
+    newsess.add(f)
+    newsess.commit()
+
+    newf = newsess.query(koreafood.Food).filter_by(id=f.id).one()
+    assert newf.id == f.id
+    assert len(newf.aliments) == 1
+    assert newf.aliments[0].id == a.id
