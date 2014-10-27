@@ -124,10 +124,8 @@ def loader(url):
 
     for food in koreafood.get_food_list():
         mfood = food_to_model(sess, food)
-        add_food(sess, mfood)
-        for aliment in mfood.aliments:
-            add_aliment(sess, aliment)
-            add_food_aliment(sess, mfood, aliment)
+        sess.merge(mfood)
+        sess.commit()
 
 if __name__ == '__main__':
     loader()
