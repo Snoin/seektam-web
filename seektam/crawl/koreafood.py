@@ -4,12 +4,16 @@
 농식품종합정보시스템 식단관리(메뉴젠) 데이터 가져오기
 http://koreanfood.rda.go.kr/
 '''
+from __future__ import absolute_import
 
 import urllib
 
 import lxml.html
 from lxml.cssselect import CSSSelector
 import requests
+from sqlalchemy.orm.exc import NoResultFound
+
+from ..model import koreafood
 
 
 class Food(object):
@@ -80,3 +84,38 @@ def get_food_list():
         if entry is None:
             break
         n = n+1
+
+
+def food_to_model(sess, food):
+    ret = []
+    mfood = koreafood.Food()
+    mfood.name = food.name
+    mfood.category_big = food.category_big
+    mfood.category_small = food.category_small
+
+    for k in food.aliment:
+        try:
+            maliment = sess.query(koreafood.Aliment).filter(
+                koreafood.Aliment.name == k).one()
+        except NoResultFound:
+            arr = food.aliment[k]
+            maliment = koreafood.Aliment()
+
+            # FIXME: take food.aliment as dict(dict()), not dict(list())
+            columns = [
+                'weight', 'energy', 'moisture', 'protein', 'fat',
+                'nonfiborous', 'fiber', 'ash', 'calcium', 'potassium',
+                'retinol_equivalent', 'retinol', 'betacarotene',
+                'thiamin', 'riboflavin', 'niacin', 'ascobic_acid'
+                ]
+
+            maliment.name = k
+            arr = map(lambda x: x.replace(',', ''), arr)
+            weight = float(arr[0]) if arr[0] else 1.0
+            for c in columns[1:]:
+                setattr(maliment, c, float(arr[columns.index(c)]) / weight)
+
+        ret.append(maliment)
+
+    mfood.aliments = ret
+    return mfood
