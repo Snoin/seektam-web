@@ -6,8 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm.session import sessionmaker
 
-from seektam.cli import loader
-from seektam.cli import shell
+from seektam.cli import loader, shell
 from seektam.crawl import koreafood
 from seektam.model import orm
 from seektam.model import koreafood as koreafood_model
