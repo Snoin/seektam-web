@@ -69,10 +69,10 @@ def runserver(debug, reload):
     u"""Flask web application을 실행합니다. (실 운영에 사용하지 마세요.)"""
 
     if debug is None:
-        debug = app.config.get('DEBUG', True)
+        debug = app.debug
 
     if reload is None:
-        reload = app.config.get('DEBUG', True)
+        reload = app.debug
 
     app.run(
         port=app.config['PORT'],
