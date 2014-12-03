@@ -60,13 +60,20 @@ def loader(url):
 
 
 @cli.command()
-@option('--debug/--no-debug', '-d/-D', default=False,
+@option('--debug/--no-debug', '-d/-D', default=None,
         help=u'Werkzeug 디버거 활성화 (실 서비스 사용 금지)')
-@option('--reload/--no-reload', '-r/-R', default=False,
+@option('--reload/--no-reload', '-r/-R', default=None,
         help=u'리로더 활성화 (실 서비스 사용시 안전치 못할 수 있음)')
 @global_option
 def runserver(debug, reload):
-    u"""Flask web application을 실행합니다."""
+    u"""Flask web application을 실행합니다. (실 운영에 사용하지 마세요.)"""
+
+    if debug is None:
+        debug = app.debug
+
+    if reload is None:
+        reload = app.debug
+
     app.run(
         port=app.config['PORT'],
         debug=debug,
